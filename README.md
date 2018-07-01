@@ -4,7 +4,9 @@ A fully featured Clinic Management System having a well designed Database Schema
 ## Technologies Used:
 
 For Frontend: HTML, CSS, BootStrap, JavaScript
+
 For Backend: C#, ASP.NET
+
 For Database: SQL
 
 ### Tools:
@@ -46,13 +48,27 @@ Our project revolves around three major classes of users. Characteristics of eac
 
 
 ## How to Run
+1- Install [Microsoft Visual Studio](https://visualstudio.microsoft.com/vs/community/), [Microsoft SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017), [Microsoft SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express)
+
+2- Open SQL Server Management Studio in the "Connect to Database Engine" window type the following:
+```
+Servername: .\SQLEXRPESS
+Authentication: Windows Authentication 
+```
+![Connection Settings](../master/images/connection.png)
+
+3- Now open Schema.sql file in Database Files folder and execute it all. This will create the database and the tables. Afterwards execute the following sql file: Admin.sql, Doctor.sql, Patient.sql, Signup.sql.
+
+4- Now execute the Insertions.sql file in Database Files folder. This will populate the database with some test entries.
+
+5- Now everything is setup. You can run the Visual Studio Project by opening Clinic Management System.sln and running the project.
+
 
 ## Interface
 
-<p float="left">
+<p float="center">
   <img src="/img1.png" width="100" />
   <img src="/img2.png" width="100" /> 
-  <img src="/img3.png" width="100" />
 </p>
 
 
