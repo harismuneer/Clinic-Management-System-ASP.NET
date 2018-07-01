@@ -69,9 +69,9 @@ Authentication: Windows Authentication
 
 ## Interface
 
-<p float="center">
-  <img src="/img1.png" width="100" />
-  <img src="/img2.png" width="100" /> 
+<p algin="center">
+  <img src="../master/images/main.png"/>
+  <img src="../master/images/appointment.png"/> 
 </p>
 
 
