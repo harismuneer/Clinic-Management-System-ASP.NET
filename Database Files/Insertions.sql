@@ -13,10 +13,7 @@ USE DBProject
 GO
 
 
-INSERT INTO LoginTable VALUES ('Admin' ,'admin@clinic.com' ,   3)
-
-
-
+INSERT INTO LoginTable VALUES ('admin@clinic.com' ,'admin' ,   3)
 
 
 --DEPARTMENT INSERTION
