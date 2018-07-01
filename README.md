@@ -85,7 +85,7 @@ Authentication: Windows Authentication
 
 5- Everything is setup now! You can run the Visual Studio Project by opening Clinic Management System.sln and then select the SignUp.aspx page and click run button named IIS Express. 
 
-<img src="../master/images/run.png" width = "500"/> 
+<img src="../master/images/run1.png"/> 
 
 
 
