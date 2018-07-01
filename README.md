@@ -32,7 +32,7 @@ Some screenshots of the pages.
 
 
 ## Functionalities Implemented:
-Our project revolves around three major classes of users. Characteristics of each class is listed below
+Our project revolves around three major classes of users. Characteristics of each class are listed below
 
 ### 1. Patient:
 
