@@ -10,9 +10,9 @@ For Backend: C#, ASP.NET
 For Database: SQL
 
 ### Tools:
-[Microsoft Visual Studio](https://visualstudio.microsoft.com/vs/community/)
-
-[Microsoft SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017)
+* [Microsoft Visual Studio](https://visualstudio.microsoft.com/vs/community/)
+* [Microsoft SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express)
+* [Microsoft SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017)
 
 ## Functionalities Implemented:
 Our project revolves around three major classes of users. Characteristics of each class is listed below
@@ -48,20 +48,23 @@ Our project revolves around three major classes of users. Characteristics of eac
 
 
 ## How to Run
-1- Install [Microsoft Visual Studio](https://visualstudio.microsoft.com/vs/community/), [Microsoft SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017), [Microsoft SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express)
+1- Install the following:
+* [Microsoft Visual Studio](https://visualstudio.microsoft.com/vs/community/)
+* [Microsoft SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express)
+* [Microsoft SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017)
 
-2- Open SQL Server Management Studio in the "Connect to Database Engine" window type the following:
+2- Open SQL Server Management Studio and in the "Connect to Database Engine" window type the following:
 ```
 Servername: .\SQLEXRPESS
 Authentication: Windows Authentication 
 ```
 ![Connection Settings](../master/images/connection.png)
 
-3- Now open Schema.sql file in Database Files folder and execute it all. This will create the database and the tables. Afterwards execute the following sql file: Admin.sql, Doctor.sql, Patient.sql, Signup.sql.
+3- Now open Schema.sql file in Database Files folder and execute it all. This will create the database and the tables. Afterwards execute the following sql files: Admin.sql, Doctor.sql, Patient.sql, Signup.sql.
 
 4- Now execute the Insertions.sql file in Database Files folder. This will populate the database with some test entries.
 
-5- Now everything is setup. You can run the Visual Studio Project by opening Clinic Management System.sln and running the project.
+5- Everything is setup now! You can run the Visual Studio Project by opening Clinic Management System.sln and running the project.
 
 
 ## Interface
