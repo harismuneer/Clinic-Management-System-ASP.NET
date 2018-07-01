@@ -37,7 +37,7 @@ end
 --------------------------BillsHistory-------------------------
 ----------------------------(1)-------------------------------
 
-
+GO
 create procedure RetrieveBillHistory
 
 @pID int,
@@ -58,7 +58,7 @@ end
 --------------------------CurrentAppointment-------------------------
 ----------------------------(1)-------------------------------
 
-
+GO
 create procedure RetrieveCurrentAppointment
 
 @pID int,
@@ -119,7 +119,7 @@ end
 --------------------------TreatmentHistory-------------------------
 ----------------------------(1)-------------------------------
 
-
+GO
 create procedure RetrieveTreatmentHistory
 
 @pID int,
@@ -141,7 +141,7 @@ end
 
 ----------------------------(1)-------------------------------
 
-
+GO
 create view deptInfo
 as
 select DeptName, [Description], count(Dept.deptNo) as [Number of Doctors] 
@@ -154,7 +154,7 @@ group by Dept.DeptNo, DeptName, [Description]
 --------------------------ViewDoctors-------------------------
 
 ----------------------------(1)-------------------------------
-
+GO
 create procedure RetrieveDeptDoctorInfo
 
 @deptName varchar(30)
@@ -176,7 +176,7 @@ end
 /*
 Takes DoctorID and returns its data
 */
-
+GO
 create procedure RetrieveDoctorData
 
 
@@ -205,6 +205,8 @@ end
 
 --------------------------------------------------------------------------------------
 ----------------------------------Split Function--------------------------------------
+
+GO
 create FUNCTION [dbo].[fnSplitString] 
 ( 
     @string NVARCHAR(MAX), 
@@ -235,7 +237,7 @@ END
 ----------------------------(1)-------------------------------
 
 --The slots are from 9 AM to 5 PM each today and each slot is of one hour
-
+GO
 create procedure RetrieveFreeSlots
 
 @dID int,
@@ -315,7 +317,7 @@ end
 --------------------------AppointmentRequestSent-------------------------
 ----------------------------(1)-------------------------------
 
-
+GO
 create procedure insertInAppointmentTable
 
 @pid int,
@@ -344,7 +346,7 @@ end
 --------------------------PatientNotifications-------------------------
 ----------------------------(1)-------------------------------
 
-
+GO
 create procedure RetrievePatientNotifications
 
 @pID int,
@@ -411,7 +413,7 @@ end
 --------------------------PatientFeedback-------------------------
 ----------------------------(1)-------------------------------
 
-
+GO
 create procedure retrievePendingFeedback
 
 @pID int,
@@ -440,7 +442,7 @@ end
 
 ----------------------------(2)-------------------------------
 
-
+GO
 create procedure storeFeedback
 
 @aID int
@@ -484,7 +486,7 @@ end
 ----------------------------------(1)-----------------------------------------------------
 
 ---If there is already one pending appointment for a patient, then he isn't allowed to take another appointment
-
+GO
 create trigger OneAppointment on Appointment
 instead of insert
 as

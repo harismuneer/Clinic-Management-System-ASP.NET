@@ -26,7 +26,7 @@ END
 
 
 ----------------------------(2)-------------------------------
-
+GO
 -------------Approves a Particular Appointment----------------
 create PROCEDURE APPROVE_APPOINTMENT
 @APPOINT_ID INT
@@ -43,7 +43,7 @@ END
 ----------------------------(3)-------------------------------
 
 -------------Returns the Approved Appointments of Today----------------
-
+GO
 create PROCEDURE TODAYS_APPOINTMENTS
 @DOC_ID INT
 AS
@@ -59,7 +59,7 @@ END
 ----------------------------(4)-------------------------------
 
 -------------Generates the Bill----------------
-
+GO
 create procedure generate_bill
 @did int
 as 
@@ -75,7 +75,7 @@ end
 
 -------------When the Appointment is Completed and Bill is not Paid----------------
 
-
+GO
 create procedure finishedUnpaid
 @docId int,
 @appointid  int 
@@ -97,7 +97,7 @@ end
 -------------When the Appointment is Completed and Bill is Paid----------------
 
 
-
+GO
 create procedure finishedPaid
 @docId int,
 @appointid  int
@@ -120,7 +120,7 @@ end
 
 -------------When an Appointment is Rejected----------------
 
-
+GO
 create procedure delete_APPOINTMENT
 @APPOINT_ID int
 as 
@@ -138,7 +138,7 @@ end
 
 ------------Display Doctor's Info----------------
 
-
+GO
 create procedure Doctor_Information_By_ID1
 @Id int
 as 
@@ -153,7 +153,7 @@ end
 
 ------------Update the Prescription when the Appointment is Completed----------------
 
-
+GO
 create procedure UpdatePrescription
 @docId int ,
 @appointid int,
@@ -174,7 +174,7 @@ end
 ----------------------------(10)-------------------------------
 
 ------------To get the information about an appointment----------------
-
+GO
 create PROCEDURE get_appointment
 @APPOINT_ID INT
 AS
@@ -187,7 +187,7 @@ END
 
 
 ----------------------------(11)-------------------------------
-
+GO
 create PROCEDURE retrievePHistory
 @dID INT
 AS

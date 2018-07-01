@@ -64,7 +64,7 @@ Signups new patient
 returns status = 1 on success
 returns status = 0 if patient already exists
 */
-
+GO
 create procedure PatientSignup
 
 @name varchar(20),

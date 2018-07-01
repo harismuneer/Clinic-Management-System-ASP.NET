@@ -34,6 +34,7 @@ END
 
 
 ------------------------------------------(2)---------------------------------------
+GO
 /*THIS PROCEDURE WILL RETURN INFO OF DOCTOR*/
 create procedure GET_DOCTOR_PROFILE
 
@@ -66,7 +67,7 @@ select * from OtherStaff
 
 ------------------------------------------(3)---------------------------------------
 --this procedure checks the email of doctor in login table and return true if it exists--
-
+GO
 CREATE procedure CheckDoctorEmail
 @Email varchar(30),
 @status int output
@@ -96,7 +97,7 @@ select @r
 ----------------------------------------------------------------------------
 
 /*this funciton will Add doctor to the database */
-
+GO
 CREATE procedure AddDoctor
 @Name varchar(50) ,
 @Email varchar(50),
@@ -128,7 +129,7 @@ END
 ------------------------------------------(5)---------------------------------------
 -------------------------------------------------------------------------------------
 
-
+GO
 /*THIS PROCEDURE WILL ADD STAFF TO OTHERSTAFF TABLE*/
 create procedure AddStaff
 @Name varchar(50),  
@@ -150,7 +151,7 @@ END
 
 
 ------------------------------------------(6)---------------------------------------
-
+GO
 CREATE PROCEDURE DeleteDoctor
 @id int 
 AS
@@ -164,7 +165,7 @@ END
 ----------------------------------------------------------------------
 
 ------------------------------------------(7)---------------------------------------
-
+GO
 CREATE PROCEDURE DELETESTAFF
 @id int 
 AS
@@ -184,7 +185,7 @@ END
 
 
 ------------------------------------------(1)---------------------------------------
-
+GO
 /*THIS TRIGGER WILL CHANGE THE STATUS OF THE DOCTOR TO  '1'  WHEN  INSERTED*/
 CREATE TRIGGER UpdateStatusOfDoctorToCurrent
 ON Doctor AFTER INSERT
@@ -200,7 +201,7 @@ END
 
 ---------------------------------------------------------------------------------------------
 
-
+GO
 ------------------------------------------(2)---------------------------------------
 /*THIS TRIGGER WILL UPDATE THE STATUS OF THE DOCTOR TO '0' WHEN ADMIN ATTEMPTS TO DELETE */
 CREATE TRIGGER UpdateStatusOfDoctorToPast
@@ -216,7 +217,7 @@ END
 
 
 ---------------------------------------------------------------------------
-
+GO
 ------------------------------------------(3)---------------------------------------
 /*THIS TRIGEGER WILL CHANGE THE CASE OF DATA OF STAFF TO UPPER/LOWER WHEN INSERTED  */
 
@@ -232,7 +233,7 @@ END
 
 
 -----------------------------------------------------------------------------------------------------------------------------
-
+GO
 ------------------------------------------(4)---------------------------------------
 /*CHECKS IF DELETING PERSON IS DOCTOR OR DOCTOR IS REMOVED FROM DOCTOR TABLE*/
 CREATE TRIGGER CheckIfDoctorRemoved
@@ -250,7 +251,7 @@ END
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
-
+GO
 ------------------------------------------(5)---------------------------------------
 /*THIS TRIGGER RESTRICTS TABLE DELETE*/
 CREATE TRIGGER DontDeleteTable
@@ -266,7 +267,7 @@ END
 
 ------------------------------------------(6)---------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------
-
+GO
 /*THIS TRIGGER RESTRICS PROCEDURE DELETE*/
 CREATE TRIGGER DontDeleteProcedure
 ON DATABASE
@@ -280,7 +281,7 @@ END
 
 ------------------------------------------(7)---------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------
-
+GO
 /*THIS TRIGGER RESTRICTS VEIW DELETE*/
 CREATE TRIGGER DontDeleteView
 ON DATABASE
@@ -293,7 +294,7 @@ END
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------(8)---------------------------------------
-
+GO
 /*THIS TRIGGER RESTRICTS FUNCTION DELETE*/
 CREATE TRIGGER DontDeleteFunction
 ON DATABASE
@@ -317,6 +318,8 @@ END
 
 
 ------------------------------------------(1)---------------------------------------
+
+GO
 /*THIS VIEW WILL RETURN TOTAL PATIENTS FROM THE DATABASE */
 create View  Total_Patient
 AS
@@ -325,6 +328,7 @@ select COUNT(patientID) as 'Total Patients' from Patient
 
 ----------------------------------------------------------------------------------
 ------------------------------------------(2)---------------------------------------
+GO
 /*THIS VIEW WILL RETURN TOTAL DOCTOR FROM THE DATABASE */
 create VIEW Total_Doctors
 AS
@@ -332,7 +336,7 @@ select COUNT(Doctor.DoctorID) as 'Total Doctors' from Doctor where Doctor.status
 
 ----------------------------------------------------------------------------------
 
-
+GO
 ------------------------------------------(3)---------------------------------------
 /*THIS FUNCTION WILL RETURN THE INCOME OF CURRENT MONTH*/
 create VIEW Income
@@ -345,8 +349,9 @@ DATEDIFF(MONTH, Appointment.Date, GETDATE())  = 0
 
 
 ---------------------------------------------------------------------------------
-
 ------------------------------------------(4)---------------------------------------
+
+GO
 /*THIS FUNCITON WILL RETURN LIST OF DEPRARTMENTS */
 create VIEW Department_View
 AS
@@ -359,6 +364,7 @@ ORDER BY Department.DeptNo
 --------------------------------------------------------------------------------
 
 
+GO
 ------------------------------------------(5)---------------------------------------
 /*THIS VIEW WILL RETURN THE APPOINTMENT VIEW CONTAINING PATIENT NAM AND DOCTOR NAME*/
 create VIEW Appointment_view
@@ -369,7 +375,7 @@ WHERE DATEDIFF(MONTH, A.Date, GETDATE()) = 0
 
 ------------------------------------------------------------------------------------
 
-
+GO
 ------------------------------------------(6)---------------------------------------
 create VIEW STAFF_VIEW
 AS
@@ -378,7 +384,7 @@ SELECT StaffID as ID , Name , Designation from OtherStaff
 
 
 --------------------------------------------------------------------------------------
-
+GO
 ------------------------------------------(7)---------------------------------------
 CREATE VIEW PATIENT_VIEW
 AS

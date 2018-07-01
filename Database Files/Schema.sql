@@ -1,7 +1,11 @@
+GO
 create database DBProject
 
+GO
 use DBProject
+
 go
+
 
 
 /*
