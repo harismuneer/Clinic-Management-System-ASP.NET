@@ -14,6 +14,23 @@ For Database: SQL
 * [Microsoft SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express)
 * [Microsoft SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017)
 
+## Interface
+Some screenshots of the pages.
+
+### Signup Page 
+<img src="../master/images/main1.png"/>
+
+### Take Appointment
+<img src="../master/images/appointment1.png"/> 
+
+### Current Appointments
+<img src="../master/images/current1.png"/> 
+
+### Search Staff
+<img src="../master/images/search.png"/> 
+
+
+
 ## Functionalities Implemented:
 Our project revolves around three major classes of users. Characteristics of each class is listed below
 
@@ -58,21 +75,21 @@ Our project revolves around three major classes of users. Characteristics of eac
 Servername: .\SQLEXRPESS
 Authentication: Windows Authentication 
 ```
-![Connection Settings](../master/images/connection.png)
+<p algin="middle">
+<img src="../master/images/connection.png" width = "500"/> 
+</p>
 
 3- Now open Schema.sql file in Database Files folder and execute it all. This will create the database and the tables. Afterwards execute the following sql files: Admin.sql, Doctor.sql, Patient.sql, Signup.sql.
 
-4- Now execute the Insertions.sql file in Database Files folder. This will populate the database with some test entries.
+4- Now execute the Insertions.sql file in Database Files folder. This will populate the database with some test entries. Moreover read this file since it has login data of some doctors, patients and admin which will help you test the functionalities.
 
-5- Everything is setup now! You can run the Visual Studio Project by opening Clinic Management System.sln and running the project.
+5- Everything is setup now! You can run the Visual Studio Project by opening Clinic Management System.sln and then select the SignUp.aspx page and click run button named IIS Express. 
+
+<img src="../master/images/run.png" width = "500"/> 
 
 
-## Interface
 
-<p algin="center">
-  <img src="../master/images/main.png"/>
-  <img src="../master/images/appointment.png"/> 
-</p>
+
 
 
 
