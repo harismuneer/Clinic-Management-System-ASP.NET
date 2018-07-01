@@ -9,7 +9,7 @@ For Backend: C#, ASP.NET
 
 For Database: SQL
 
-### Tools:
+### Pre-requisites:
 * [Microsoft Visual Studio](https://visualstudio.microsoft.com/vs/community/)
 * [Microsoft SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express)
 * [Microsoft SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017)
