@@ -10,9 +10,10 @@ using System.Data.SqlClient;
  
 namespace DBProject.DAL
 {
-
+	//Database Layer of 3 tier architecture
 	public class myDAL
     {
+		//connection string of the server database
         private static readonly string connString =
             System.Configuration.ConfigurationManager.ConnectionStrings["sqlCon1"].ConnectionString;
 
