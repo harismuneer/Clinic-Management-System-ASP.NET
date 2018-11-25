@@ -84,7 +84,7 @@ Our project revolves around three major classes of users. Characteristics of eac
 Servername: .\SQLEXRPESS
 Authentication: Windows Authentication 
 ```
-<p algin="middle">
+<p align="center">
 <img src="../master/images/connection.png" width = "500"/> 
 </p>
 
@@ -93,9 +93,9 @@ Authentication: Windows Authentication
 4- Now execute the Insertions.sql file in Database Files folder. This will populate the database with some test entries. Moreover, some login emails and passwords of doctors, patients and admin are placed in the Insertions.sql file. You can use them to test the functionalities of the system.
 
 5- Everything is setup now! You can run the Visual Studio Project by opening Clinic Management System.sln and then select the SignUp.aspx page and click run button named IIS Express. 
-
+<p align="center">
 <img src="../master/images/run1.png"/> 
-
+</p>
 
 ## Author
 You can get in touch with me on my LinkedIn Profile: [![LinkedIn Link](https://img.shields.io/badge/Connect-harismuneer-blue.svg?logo=linkedin&longCache=true&style=social&label=Connect
