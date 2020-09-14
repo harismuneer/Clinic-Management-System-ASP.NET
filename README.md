@@ -96,7 +96,7 @@ Authentication: Windows Authentication
 <img src="../master/images/run1.png"/> 
 </p>
 
-## Author
+## Contact
 You can get in touch with me on my LinkedIn Profile: [![LinkedIn Link](https://img.shields.io/badge/Connect-harismuneer-blue.svg?logo=linkedin&longCache=true&style=social&label=Connect
 )](https://www.linkedin.com/in/harismuneer)
 
@@ -117,4 +117,4 @@ If you face any issue, you can create a new issue in the Issues Tab and I will b
 ## License
 [![MIT](https://img.shields.io/cocoapods/l/AFNetworking.svg?style=style&label=License&maxAge=2592000)](../master/LICENSE)
 
-Copyright (c) 2018-present, harismuneer 
+Copyright (c) 2018-present, harismuneer, HassaanElahi, FarhanShoukat, Kashan.Sid                              
