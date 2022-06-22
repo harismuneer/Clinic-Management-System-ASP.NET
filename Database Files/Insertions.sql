@@ -13,7 +13,7 @@ USE DBProject
 GO
 
 
-INSERT INTO LoginTable VALUES ('admin@clinic.com' ,'admin' ,   3)
+INSERT INTO LoginTable(Email, Password, Type) VALUES ('admin@clinic.com' ,'admin' ,   3)
 
 
 --DEPARTMENT INSERTION
@@ -77,7 +77,7 @@ SELECT @P_ID = LoginID FROM LoginTable WHERE Email='XYZ@gmail.com'
 INSERT INTO Patient VALUES(@P_ID, 'XYZ', '61536516', 'ENJOY, LAHORE', '4-4-1996', 'M')
 
 
-select * from OtherStaff
+--select * from OtherStaff
 
 insert into OtherStaff values ('Javed', '03227561002','Iqbal Town, Lhr', 'Guard', 'M', '05-04-1990', 'Matric',5000)
 insert into OtherStaff values ('Hamza', '03227561002','Iqbal Town, Lhr', 'Sweeper', 'M', '05-04-1990', 'Matric',5000)
