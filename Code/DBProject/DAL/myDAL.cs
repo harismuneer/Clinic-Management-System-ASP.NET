@@ -178,11 +178,23 @@ namespace DBProject.DAL
             SqlCommand cmd = new SqlCommand("CheckDoctorEmail", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@Email", SqlDbType.VarChar, 30).Value = Email;
-            cmd.Parameters.Add("@status", SqlDbType.Int).Direction = ParameterDirection.Output;
+            //cmd.Parameters.Add("@status", SqlDbType.Int).Direction = ParameterDirection.Output;
+            cmd.Parameters.Add("@status", SqlDbType.Int).Value = 0;
 
-            cmd.ExecuteNonQuery();
 
-            status = (int)cmd.Parameters["@status"].Value;
+
+            int psk = 0;
+            try
+            {
+                psk = cmd.ExecuteNonQuery();
+            }
+            catch(SqlException ex)
+            {
+
+            }
+
+            //status = (int)cmd.Parameters["@status"].Value;
+            status = psk;
             con.Close();
 
             return status;
@@ -195,7 +207,7 @@ namespace DBProject.DAL
 
 
         /*THIS FUNCTION WILL ADD THE DOCTOR TO THE DATA BASE */
-        public void AddDoctor(string Name, string Email, string Password, string BirthDate, int dept, string Phone, char gender, string Address, int exp, int salary, int Charges_per_visit, string spec, string qual)
+        public int AddDoctor(string Name, string Email, string Password, string BirthDate, int dept, string Phone, char gender, string Address, int exp, int salary, int Charges_per_visit, string spec, string qual)
         {
 
             SqlConnection con = new SqlConnection(connString);
@@ -235,7 +247,15 @@ namespace DBProject.DAL
             cmd.Parameters.Add("@spec", SqlDbType.VarChar, 30).Value = spec;
             cmd.Parameters.Add("@qual", SqlDbType.VarChar, 30).Value = qual;
 
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return 1;
+            }
+            catch(Exception ex)
+            {
+                return 0;
+            }
             con.Close();
 
 

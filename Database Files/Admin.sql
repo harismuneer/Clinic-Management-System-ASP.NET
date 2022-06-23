@@ -70,24 +70,29 @@ select * from OtherStaff
 GO
 CREATE procedure CheckDoctorEmail
 @Email varchar(30),
-@status int output
+@status int 
 AS
 BEGIN
 SET @status = 0
 
 	IF EXISTS( select * from LoginTable where Email = @Email )
 	BEGIN
-	
-	SET @status = 1
-	
+		SET @status = 1
+	END
+
+	ELSE
+	BEGIN
+		SET @status = 0
 	END
 
 END
 
+SELECT @status
+
 --EXECUTION---
-DECLARE @r int 
-EXEC CheckDoctorEmail  'hassaan.elahi@hotmail.com'  , @r output
-select @r
+--DECLARE @r int 
+--EXEC CheckDoctorEmail  'hassaan.elahi@hotmail.com'  , @r output
+--select @r
 
 
 
