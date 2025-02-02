@@ -48,10 +48,20 @@ namespace DB_Project
 				int dept = Convert.ToInt32(Department.SelectedValue);
 				string gender = Request.Form["Gender"].ToString();
 
-				objmyDAL.AddDoctor(Name.Text, Email.Text, Password.Text, BirthDate.Text, dept, Phone.Text, gender[0], Address.Text, exp, salary, chargesPerVisit, spec.Text, Qualification.Text);
+				int result;
+				result = objmyDAL.AddDoctor(Name.Text, Email.Text, Password.Text, BirthDate.Text, dept, Phone.Text, gender[0], Address.Text, exp, salary, chargesPerVisit, spec.Text, Qualification.Text);
 				Response.BufferOutput = true;
 				Msg.Visible = true;
-				Msg.Text = "doctor Added Succesfully";
+				if (result == 0)
+				{
+					Msg.ForeColor = System.Drawing.Color.Red;
+					Msg.Text = "doctor not Inserted";
+				}
+				else
+                {
+					Msg.ForeColor = System.Drawing.Color.Green;
+					Msg.Text = "doctor Added Succesfully";
+				}
 				flushInformation();
 
 
