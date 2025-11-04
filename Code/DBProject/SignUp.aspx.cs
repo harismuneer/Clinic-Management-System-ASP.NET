@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using DBProject.DAL;
-using System.Data;
-
 
 namespace DBProject
 {
@@ -14,114 +8,91 @@ namespace DBProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["idoriginal"] = "";
+            if (!IsPostBack)
+            {
+                Session["idoriginal"] = "";
+            }
         }
 
-        //-----------------------Function1--------------------------//
+        //----------------------- Login Function --------------------------//
         protected void loginV(object sender, EventArgs e)
         {
-            string email = loginEmail.Text;
-            string password = loginPassword.Text;
+            string email = loginEmail.Text.Trim();
+            string password = loginPassword.Text.Trim();
 
-            myDAL objmyDAl = new myDAL();
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                ShowAlert("Please enter both Email and Password.");
+                return;
+            }
 
-            int status = 0;
-            int type = 0;
-            int id = 0;
-
-            status = objmyDAl.validateLogin(email, password, ref type, ref id);
+            myDAL objmyDAL = new myDAL();
+            int status = objmyDAL.validateLogin(email, password, ref int type, ref int id);
 
             if (status == 0)
             {
                 Session["idoriginal"] = id;
 
-                if (type == 1)
+                switch (type)
                 {
-                    Response.BufferOutput = true;
-                    Response.Redirect("~/Patient/PatientHome.aspx");
-                    return;
-                }
-
-                else if (type == 2)
-                {
-                    Response.BufferOutput = true;
-                    Response.Redirect("~/Doctor/DoctorHome.aspx");
-                    return;
-                }
-
-                else if (type == 3)
-                {
-                    Response.BufferOutput = true;
-                    Response.Redirect("~/Admin/AdminHome.aspx");
-                    return;
+                    case 1:
+                        Response.Redirect("~/Patient/PatientHome.aspx", false);
+                        break;
+                    case 2:
+                        Response.Redirect("~/Doctor/DoctorHome.aspx", false);
+                        break;
+                    case 3:
+                        Response.Redirect("~/Admin/AdminHome.aspx", false);
+                        break;
+                    default:
+                        ShowAlert("Invalid user type.");
+                        break;
                 }
             }
-
-
             else if (status == 1)
-            {
-                Response.Write("<script>alert('Email not found. Try Again !');</script>");
-            }
-
+                ShowAlert("Email not found. Try again!");
             else if (status == 2)
-            {
-                Response.Write("<script>alert('Incorrect Password. Try Again !');</script>");
-            }
-
-            else if (status == -1)
-            {
-                Response.Write("<script>alert('There was some error. Try Again !');</script>");
-            }
+                ShowAlert("Incorrect password. Try again!");
+            else
+                ShowAlert("Unexpected error occurred. Please try again.");
         }
 
-
-
-
-        //-----------------------Function2--------------------------//
+        //----------------------- Signup Function --------------------------//
         protected void signupV(object sender, EventArgs e)
         {
-            string Name = sName.Text;
-            string BirthDate = sBirthDate.Text;
-            string Email = sEmail.Text;
-            string Password = sPassword.Text;
-            string PhoneNo = Phone.Text;
-            string Addr = Address.Text;
+            string name = sName.Text.Trim();
+            string birthDate = sBirthDate.Text.Trim();
+            string email = sEmail.Text.Trim();
+            string password = sPassword.Text.Trim();
+            string phone = Phone.Text.Trim();
+            string addr = Address.Text.Trim();
+            string gender = Request.Form["Gender"];
 
-            string gender = Request.Form["Gender"].ToString();
-           
-
-
-            myDAL objmyDAl = new myDAL();
-
-            int id = 0;
-
-            int status = objmyDAl.validateUser(Name, BirthDate, Email, Password, PhoneNo, gender, Addr, ref id);
-
-
-            //status == 0 failure
-            if (status == 0)
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                Response.Write("<script>alert('Email already exists. Please choose a different one.');</script>");
+                ShowAlert("Please fill in all required fields.");
+                return;
             }
 
+            myDAL objmyDAL = new myDAL();
+            int id = 0;
+            int status = objmyDAL.validateUser(name, birthDate, email, password, phone, gender, addr, ref id);
+
+            if (status == 0)
+                ShowAlert("Email already exists. Please choose a different one.");
             else if (status == 1)
             {
                 Session["idoriginal"] = id;
-
-              //Response.Write("<script>alert('Registration Successful !');</script>");
-
-                Response.BufferOutput = true;
-                Response.Redirect("~/Patient/PatientHome.aspx");
+                Response.Redirect("~/Patient/PatientHome.aspx", false);
             }
-
-            else if (status == -1)
-            {
-                Response.Write("<script>alert('There was some error. Try again !');</script>");
-            }
-           
+            else
+                ShowAlert("Unexpected error occurred. Please try again.");
         }
 
-            //Enter new function here//
+        //----------------------- Utility Function --------------------------//
+        private void ShowAlert(string message)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('{message}');", true);
+        }
     }
-
 }
