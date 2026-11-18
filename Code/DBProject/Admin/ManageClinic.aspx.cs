@@ -13,6 +13,11 @@ namespace DBProject
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			if (Session["idoriginal"] == null || Session["idoriginal"].ToString() == "" || Session["type"] == null || (int)Session["type"] != 3)
+			{
+				Response.Redirect("~/SignUp.aspx");
+				return;
+			}
 			if (!IsPostBack)
 			{
 				LoadGrid("", "DOCTOR");
