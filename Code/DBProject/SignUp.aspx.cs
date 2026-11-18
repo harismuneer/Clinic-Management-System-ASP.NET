@@ -34,6 +34,7 @@ namespace DBProject
             if (status == 0)
             {
                 Session["idoriginal"] = id;
+                Session["type"] = type;
 
                 if (type == 1)
                 {
@@ -107,6 +108,7 @@ namespace DBProject
             else if (status == 1)
             {
                 Session["idoriginal"] = id;
+                Session["type"] = 1;
 
               //Response.Write("<script>alert('Registration Successful !');</script>");
 
